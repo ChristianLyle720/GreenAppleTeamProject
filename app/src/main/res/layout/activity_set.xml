@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SetActivity">
+
+    <TextView
+        android:id="@+id/userSetTextView"
+        android:layout_width="168dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="59dp"
+        android:layout_marginEnd="118dp"
+        android:layout_marginBottom="644dp"
+        android:text="Study Sets"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/setButton1"
+        android:layout_width="105dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="175dp"
+        android:layout_marginEnd="256dp"
+        android:layout_marginBottom="503dp"
+        android:text="Access"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/setButton2"
+        android:layout_width="105dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="245dp"
+        android:layout_marginTop="175dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginBottom="503dp"
+        android:text="Access"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/setButton4"
+        android:layout_width="105dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="245dp"
+        android:layout_marginTop="333dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginBottom="345dp"
+        android:text="Access"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/setButton5"
+        android:layout_width="105dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="503dp"
+        android:layout_marginEnd="256dp"
+        android:layout_marginBottom="175dp"
+        android:text="Access"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/setButton6"
+        android:layout_width="105dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="248dp"
+        android:layout_marginTop="503dp"
+        android:layout_marginEnd="58dp"
+        android:layout_marginBottom="175dp"
+        android:text="Access"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/setButton3"
+        android:layout_width="105dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="333dp"
+        android:layout_marginEnd="256dp"
+        android:layout_marginBottom="345dp"
+        android:text="Access"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/setTextView1"
+        android:layout_width="102dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="124dp"
+        android:layout_marginEnd="257dp"
+        android:layout_marginBottom="566dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/setTextView2"
+        android:layout_width="99dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="247dp"
+        android:layout_marginTop="123dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="568dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/setTextView3"
+        android:layout_width="101dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="284dp"
+        android:layout_marginEnd="257dp"
+        android:layout_marginBottom="408dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/setTextView4"
+        android:layout_width="99dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="284dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="405dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/setTextView5"
+        android:layout_width="99dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="452dp"
+        android:layout_marginEnd="259dp"
+        android:layout_marginBottom="239dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/setTextView6"
+        android:layout_width="99dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="452dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="240dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
