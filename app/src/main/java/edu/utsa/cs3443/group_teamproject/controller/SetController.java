@@ -20,6 +20,12 @@ public class SetController implements View.OnClickListener{
     private String user;
     private Context context;
     private SetActivity setActivity;
+
+    public SetController(String user, Context c){
+        this.user = user;
+        context = c;
+    }
+
     public SetController(String user, Context c, SetActivity setActivity){
         this.user = user;
         context = c;
