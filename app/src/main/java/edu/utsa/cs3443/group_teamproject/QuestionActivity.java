@@ -149,6 +149,13 @@ public class QuestionActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onResume(){
+        super.onResume();
+        // put your code here...
+
+    }
+
     public void setQuestionTextView(TextView setText, String display){
         setText.setText(display);
     }

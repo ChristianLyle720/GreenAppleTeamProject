@@ -1,9 +1,12 @@
 package edu.utsa.cs3443.group_teamproject;
 
+import static edu.utsa.cs3443.group_teamproject.controller.MainController.user;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -21,6 +24,7 @@ public class SetActivity extends AppCompatActivity {
     private TextView setTextView4;
     private TextView setTextView5;
     private TextView setTextView6;
+    SetController initializeController = new SetController(user, this, this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +40,7 @@ public class SetActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String user = intent.getStringExtra("user");
-        SetController initializeController = new SetController(user, this, this);
+
         try {
             initializeController.loadData();
         } catch (IOException e) {
@@ -85,6 +89,18 @@ public class SetActivity extends AppCompatActivity {
             display = setControllers.get(i).getSetText();
             setSetText(textViews.get(i), display);
         }
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+
+        try {
+            initializeController.loadData();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     public void setSetText(TextView setText, String display){

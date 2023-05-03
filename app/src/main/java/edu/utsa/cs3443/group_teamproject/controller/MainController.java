@@ -15,6 +15,7 @@ public class MainController implements View.OnClickListener{
         this.main = main;
         this.nameText = nameText;
     }
+
     public void onClick(View view) {
         user = nameText.getText().toString();
         Intent intent = new Intent(main, SetActivity.class);

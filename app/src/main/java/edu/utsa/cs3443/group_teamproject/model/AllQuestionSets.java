@@ -14,9 +14,7 @@ public class AllQuestionSets {
     }
 
     public static AllQuestionSets getQuestionSetsInstance(String user, ArrayList<String[]> setData, ArrayList<String[]> questionData){
-        if(questionSetsInstance == null){
-            questionSetsInstance = new AllQuestionSets(user, setData, questionData);
-        }
+        questionSetsInstance = new AllQuestionSets(user, setData, questionData);
         return questionSetsInstance;
     }
 

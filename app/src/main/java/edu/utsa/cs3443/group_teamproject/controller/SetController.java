@@ -3,8 +3,11 @@ package edu.utsa.cs3443.group_teamproject.controller;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
+import android.util.Log;
 import android.view.View;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -37,6 +40,7 @@ public class SetController implements View.OnClickListener{
         context = c;
         this.setActivity = setActivity;
     }
+
     public void onClick(View view){
         Intent intent = new Intent(setActivity, QuestionActivity.class);
         intent.putExtra("name", name);
@@ -45,12 +49,17 @@ public class SetController implements View.OnClickListener{
     }
 
     public void loadData() throws IOException {
-        AssetManager assetManager = context.getAssets();
-        InputStream inSet = assetManager.open("sets.csv");
-        ArrayList<String[]> setParts = StringLoader.loadData(inSet);
-        InputStream inQuestions = assetManager.open("questions.csv");
-        ArrayList<String[]> questionParts = StringLoader.loadData(inQuestions);
-        AllQuestionSets.getQuestionSetsInstance(user, setParts, questionParts);
+        try {
+            ArrayList<String[]> questionParts = null;
+            InputStream inSet = context.openFileInput("sets.csv");
+            ArrayList<String[]> setParts = StringLoader.loadData(inSet);
+            InputStream inputStream = context.openFileInput("questions.csv");
+            questionParts = StringLoader.loadData(inputStream);
+            AllQuestionSets.getQuestionSetsInstance(user, setParts, questionParts);
+            inputStream.close();
+        } catch (FileNotFoundException e) {
+
+        }
     }
 
     public String getUserText(){
@@ -63,4 +72,6 @@ public class SetController implements View.OnClickListener{
     public String getSetText(){
         return name + " Set";
     }
+
+    public String getSet(){return this.name;}
 }
