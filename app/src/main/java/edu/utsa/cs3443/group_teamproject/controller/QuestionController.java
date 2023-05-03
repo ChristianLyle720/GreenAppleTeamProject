@@ -8,7 +8,7 @@ import edu.utsa.cs3443.group_teamproject.ChangeActivity;
 import edu.utsa.cs3443.group_teamproject.QuestionActivity;
 
 public class QuestionController implements View.OnClickListener {
-    private String name;
+    public static String name;
     private String user;
     private String question;
     private String answer;

@@ -14,9 +14,18 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * CSVProcessor is a utility class for processing CSV files.
+ */
 public class CSVProcessor {
 
+    /**
+     * Copies an asset file to the private storage.
+     *
+     * @param context         the application context
+     * @param assetFileName   the name of the asset file
+     * @param privateFileName the name of the target private file
+     */
     public static void copyAssetToFile(Context context, String assetFileName, String privateFileName) {
         try {
             InputStream inputStream = context.getAssets().open(assetFileName);
@@ -35,13 +44,25 @@ public class CSVProcessor {
         }
     }
 
+    /**
+     * Checks if a file exists.
+     *
+     * @param filePath the path to the file
+     * @return true if the file exists, false otherwise
+     */
     public static boolean fileExists(String filePath) {
         File file = new File(filePath);
         return file.exists();
     }
 
-
-    public static void remove(String target, String fileName, Context context) {
+    /**
+     * Removes a question from the CSV file by the answer.
+     *
+     * @param target  the answer of the question to be removed
+     * @param fileName the name of the CSV file
+     * @param context the application context
+     */
+    public static void removeQuestion(String target, String fileName, Context context) {
         List<String> lines = new ArrayList<>();
 
         try {
@@ -86,6 +107,14 @@ public class CSVProcessor {
         }
     }
 
+    /**
+     * Adds a new question to the CSV file.
+     *
+     * @param question the question text
+     * @param answer   the answer text
+     * @param setGroup the name of the question set
+     * @param context  the application context
+     */
     public static void addQuestion(String question, String answer, String setGroup, Context context) {
         String newLine = question + "," + answer + "," + setGroup;
 
@@ -103,5 +132,61 @@ public class CSVProcessor {
         }
     }
 
+    /**
+     * Edits an existing question in the CSV file.
+     *
+     * @param targetQuestion the text of the question to be replaced
+     * @param newQuestion    the new question text
+     * @param newAnswer      the new answer text
+     * @param setName        the name of the question set
+     * @param context        the application context
+     */
+    public static void editQuestion(String targetQuestion, String newQuestion, String newAnswer, String setName, Context context) {
+        List<String> lines = new ArrayList<>();
+
+        try {
+            InputStream inputStream = context.openFileInput("questions.csv");
+            BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
+
+            String line;
+            while ((line = br.readLine()) != null) {
+                lines.add(line);
+            }
+
+            br.close();
+            inputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        boolean questionReplaced = false;
+        for (int i = 0; i < lines.size(); i++) {
+            String[] parts = lines.get(i).split(",");
+            if (parts[0].equals(targetQuestion) && parts[2].equals(setName)) {
+                lines.set(i, newQuestion + "," + newAnswer + "," + setName);
+                questionReplaced = true;
+                break;
+            }
+        }
+
+        if (questionReplaced) {
+            try {
+                OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput("questions.csv", Context.MODE_PRIVATE));
+                BufferedWriter bw = new BufferedWriter(outputStreamWriter);
+
+                for (int i = 0; i < lines.size(); i++) {
+                    bw.write(lines.get(i));
+                    if (i < lines.size() - 1) {
+                        bw.newLine();
+                    }
+                }
+
+                bw.close();
+                outputStreamWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
 }

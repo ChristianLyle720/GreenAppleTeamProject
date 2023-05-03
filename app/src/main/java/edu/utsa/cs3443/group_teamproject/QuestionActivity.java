@@ -152,7 +152,6 @@ public class QuestionActivity extends AppCompatActivity {
     @Override
     public void onResume(){
         super.onResume();
-        // put your code here...
 
     }
 

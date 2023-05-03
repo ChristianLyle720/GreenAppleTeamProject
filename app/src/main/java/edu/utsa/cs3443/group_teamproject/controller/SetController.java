@@ -2,11 +2,8 @@ package edu.utsa.cs3443.group_teamproject.controller;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.AssetManager;
-import android.util.Log;
 import android.view.View;
 
-import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,22 +15,36 @@ import edu.utsa.cs3443.group_teamproject.SetActivity;
 import edu.utsa.cs3443.group_teamproject.model.AllQuestionSets;
 import edu.utsa.cs3443.group_teamproject.model.StringLoader;
 
+/**
+ * SetController is a class responsible for handling interactions between SetActivity and the model classes.
+ */
 public class SetController implements View.OnClickListener{
     private String name;
     private String user;
     private Context context;
     private SetActivity setActivity;
 
-    public SetController(String user, Context c){
-        this.user = user;
-        context = c;
-    }
-
+    /**
+     * Constructor for SetController.
+     *
+     * @param user       the user name
+     * @param c          the application context
+     * @param setActivity the SetActivity instance
+     */
     public SetController(String user, Context c, SetActivity setActivity){
         this.user = user;
         context = c;
         this.setActivity = setActivity;
     }
+
+    /**
+     * Constructor for SetController.
+     *
+     * @param name        the name of the set
+     * @param user        the user name
+     * @param c           the application context
+     * @param setActivity the SetActivity instance
+     */
     public SetController(String name, String user, Context c, SetActivity setActivity){
         this.name = name;
         this.user = user;
@@ -48,6 +59,11 @@ public class SetController implements View.OnClickListener{
         setActivity.startActivity(intent);
     }
 
+    /**
+     * Loads data from the CSV files into the model.
+     *
+     * @throws IOException if there's an error reading the CSV files
+     */
     public void loadData() throws IOException {
         try {
             ArrayList<String[]> questionParts = null;
@@ -62,6 +78,11 @@ public class SetController implements View.OnClickListener{
         }
     }
 
+    /**
+     * Returns the user text for the question sets.
+     *
+     * @return the user text
+     */
     public String getUserText(){
         if(user.equals("")){
             return "Question Sets";
