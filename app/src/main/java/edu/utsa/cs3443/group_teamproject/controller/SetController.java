@@ -51,7 +51,11 @@ public class SetController implements View.OnClickListener{
         context = c;
         this.setActivity = setActivity;
     }
-
+    /**
+     * Handles click events on the UI buttons in the ChangeActivity.
+     *
+     * @param view The view that was clicked.
+     */
     public void onClick(View view){
         Intent intent = new Intent(setActivity, QuestionActivity.class);
         intent.putExtra("name", name);
