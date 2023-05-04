@@ -11,7 +11,7 @@ public class StringLoader {
 /**
 * Static method to read from a file by using an InputStream and returning the contents of the file as an ArrayList of String arrays
 * Each String array in the ArrayList corresponds to a line in the file
-* @param fileName InputStream object for the file to be read from
+* @param inStream InputStream object for the file to be read from
 * @return ArrayList of String arrays containing contents of the read file
 */
     public static ArrayList<String[]> loadData(InputStream inStream){
