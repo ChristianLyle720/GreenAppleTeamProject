@@ -1,3 +1,7 @@
+/**
+ * MainActivity is the main activity of the application and acts as the starting point.
+ * It handles user input for name and initializes the necessary resources for the app.
+ */
 package edu.utsa.cs3443.group_teamproject;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,11 +13,11 @@ import android.widget.EditText;
 import java.io.IOException;
 
 import edu.utsa.cs3443.group_teamproject.controller.MainController;
-import edu.utsa.cs3443.group_teamproject.controller.SetController;
 import edu.utsa.cs3443.group_teamproject.model.CSVProcessor;
 
 public class MainActivity extends AppCompatActivity {
     private EditText nameEditText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

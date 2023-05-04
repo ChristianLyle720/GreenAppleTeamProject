@@ -1,3 +1,8 @@
+/**
+ * ChangeActivity allows users to modify a question set by adding, removing, or changing questions
+ * and their respective answers. This activity handles the UI elements and user interactions
+ * for making these changes.
+ */
 package edu.utsa.cs3443.group_teamproject;
 
 import androidx.appcompat.app.AppCompatActivity;

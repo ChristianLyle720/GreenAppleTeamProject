@@ -1,3 +1,9 @@
+/**
+ * ChangeController handles the click events and actions for the ChangeActivity UI,
+ * which allows users to modify a question set by adding, removing, or changing
+ * questions and their respective answers. This controller is responsible for managing
+ * the interactions between the UI elements and the underlying data model.
+ */
 package edu.utsa.cs3443.group_teamproject.controller;
 
 import android.content.Intent;
@@ -12,9 +18,6 @@ import edu.utsa.cs3443.group_teamproject.SetActivity;
 import edu.utsa.cs3443.group_teamproject.model.Question;
 import edu.utsa.cs3443.group_teamproject.model.CSVProcessor;
 
-/**
- * The controller class for the ChangeActivity.
- */
 public class ChangeController implements View.OnClickListener {
     private ChangeActivity ChangeActivity;
     private SetController SetController;

@@ -9,9 +9,9 @@
     <TextView
         android:id="@+id/userQuestionTextView"
         android:layout_width="161dp"
-        android:layout_height="36dp"
+        android:layout_height="40dp"
         android:layout_marginStart="130dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="18dp"
         android:layout_marginEnd="131dp"
         android:text="TextView"
         android:textAlignment="center"
@@ -24,8 +24,8 @@
 
     <TextView
         android:id="@+id/questionTextView1"
-        android:layout_width="248dp"
-        android:layout_height="43dp"
+        android:layout_width="247dp"
+        android:layout_height="55dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="68dp"
         android:layout_marginEnd="143dp"
@@ -53,8 +53,8 @@
     <TextView
         android:id="@+id/questionTextView2"
         android:layout_width="247dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="18dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="135dp"
         android:layout_marginEnd="146dp"
         android:layout_marginBottom="557dp"
@@ -80,8 +80,8 @@
 
     <TextView
         android:id="@+id/questionTextView3"
-        android:layout_width="242dp"
-        android:layout_height="46dp"
+        android:layout_width="247dp"
+        android:layout_height="55dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="196dp"
         android:layout_marginEnd="149dp"
@@ -108,8 +108,8 @@
 
     <TextView
         android:id="@+id/questionTextView4"
-        android:layout_width="242dp"
-        android:layout_height="48dp"
+        android:layout_width="247dp"
+        android:layout_height="55dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="263dp"
         android:layout_marginEnd="149dp"
@@ -136,8 +136,8 @@
 
     <TextView
         android:id="@+id/questionTextView5"
-        android:layout_width="241dp"
-        android:layout_height="48dp"
+        android:layout_width="247dp"
+        android:layout_height="55dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="334dp"
         android:layout_marginEnd="150dp"
@@ -164,7 +164,7 @@
 
     <TextView
         android:id="@+id/questionTextView6"
-        android:layout_width="238dp"
+        android:layout_width="247dp"
         android:layout_height="55dp"
         android:layout_marginStart="21dp"
         android:layout_marginTop="411dp"
@@ -192,8 +192,8 @@
 
     <TextView
         android:id="@+id/questionTextView7"
-        android:layout_width="235dp"
-        android:layout_height="53dp"
+        android:layout_width="247dp"
+        android:layout_height="55dp"
         android:layout_marginStart="21dp"
         android:layout_marginTop="488dp"
         android:layout_marginEnd="155dp"
@@ -220,8 +220,8 @@
 
     <TextView
         android:id="@+id/questionTextView8"
-        android:layout_width="236dp"
-        android:layout_height="51dp"
+        android:layout_width="247dp"
+        android:layout_height="55dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="568dp"
         android:layout_marginEnd="155dp"
@@ -229,6 +229,7 @@
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
