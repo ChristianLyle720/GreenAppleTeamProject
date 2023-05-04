@@ -14,7 +14,9 @@ import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 /**
- * CSVProcessor is a utility class for processing CSV files.
+ * @author Green Apple Inc.
+ * CSVProcessor is a utility class for processing CSV files. Has methods for copying the assets,
+ * checking if the file exist, remove, add and modify found lines in the CSV.
  */
 public class CSVProcessor {
 

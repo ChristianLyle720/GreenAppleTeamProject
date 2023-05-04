@@ -9,6 +9,7 @@ import edu.utsa.cs3443.group_teamproject.SetActivity;
 
 /**
  * The controller class for the MainActivity.
+ * @author Green Apple Inc.
  */
 public class MainController implements View.OnClickListener{
     private MainActivity main;

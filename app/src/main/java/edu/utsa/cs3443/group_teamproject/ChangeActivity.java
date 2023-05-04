@@ -1,4 +1,5 @@
 /**
+ * @author Green Apple Inc.
  * ChangeActivity allows users to modify a question set by adding, removing, or changing questions
  * and their respective answers. This activity handles the UI elements and user interactions
  * for making these changes.

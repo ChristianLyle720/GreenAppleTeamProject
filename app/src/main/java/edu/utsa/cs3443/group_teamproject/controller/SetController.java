@@ -16,6 +16,7 @@ import edu.utsa.cs3443.group_teamproject.model.AllQuestionSets;
 import edu.utsa.cs3443.group_teamproject.model.StringLoader;
 
 /**
+ * @author Green Apple Inc.
  * SetController is a class responsible for handling interactions between SetActivity and the model classes.
  */
 public class SetController implements View.OnClickListener{

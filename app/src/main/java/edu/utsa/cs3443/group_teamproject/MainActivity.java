@@ -1,4 +1,5 @@
 /**
+ * @author Green Apple Inc.
  * MainActivity is the main activity of the application and acts as the starting point.
  * It handles user input for name and initializes the necessary resources for the app.
  */

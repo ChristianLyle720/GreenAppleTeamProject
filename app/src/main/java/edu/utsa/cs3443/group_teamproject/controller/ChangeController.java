@@ -1,4 +1,5 @@
 /**
+ * @author Green Apple Inc.
  * ChangeController handles the click events and actions for the ChangeActivity UI,
  * which allows users to modify a question set by adding, removing, or changing
  * questions and their respective answers. This controller is responsible for managing
