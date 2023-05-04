@@ -1,9 +1,12 @@
 package edu.utsa.cs3443.group_teamproject;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -29,6 +32,13 @@ public class QuestionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
+
+        // calling the action bar
+        ActionBar actionBar = getSupportActionBar();
+
+        // showing the back button in action bar
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         setTextView = findViewById(R.id.userQuestionTextView);
         question1TextView = findViewById(R.id.questionTextView1);
         question2TextView = findViewById(R.id.questionTextView2);
@@ -153,6 +163,18 @@ public class QuestionActivity extends AppCompatActivity {
     public void onResume(){
         super.onResume();
 
+    }
+
+/**
+ * Adds functionality to the actionbar back button on top of the page
+ */
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public void setQuestionTextView(TextView setText, String display){

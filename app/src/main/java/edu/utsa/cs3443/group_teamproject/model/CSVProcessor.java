@@ -1,7 +1,6 @@
 package edu.utsa.cs3443.group_teamproject.model;
 
 import android.content.Context;
-import android.content.res.AssetManager;
 import android.util.Log;
 
 import java.io.BufferedReader;
@@ -28,15 +27,22 @@ public class CSVProcessor {
      */
     public static void copyAssetToFile(Context context, String assetFileName, String privateFileName) {
         try {
+            // Open the input stream for the asset file
             InputStream inputStream = context.getAssets().open(assetFileName);
+
+            // Open the output stream for the destination file in the private file directory
             OutputStream outputStream = context.openFileOutput(privateFileName, Context.MODE_PRIVATE);
 
+            // Buffer for transferring data between streams
             byte[] buffer = new byte[1024];
             int bytesRead;
+
+            // Read data from the input stream and write it to the output stream
             while ((bytesRead = inputStream.read(buffer)) != -1) {
                 outputStream.write(buffer, 0, bytesRead);
             }
 
+            // Close the input and output streams
             inputStream.close();
             outputStream.close();
         } catch (IOException e) {
@@ -56,15 +62,17 @@ public class CSVProcessor {
     }
 
     /**
-     * Removes a question from the CSV file by the answer.
+     * Removes a question from a CSV file based on the target string.
      *
-     * @param target  the answer of the question to be removed
-     * @param fileName the name of the CSV file
-     * @param context the application context
+     * @param target  the target string to search for in the file's lines
+     * @param fileName the name of the file to remove the question from
+     * @param context the application context, used for accessing the file system
      */
     public static void removeQuestion(String target, String fileName, Context context) {
+        // Create a list to store the lines from the file
         List<String> lines = new ArrayList<>();
 
+        // Read the lines from the file
         try {
             InputStream inputStream = context.openFileInput(fileName);
             BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
@@ -80,6 +88,7 @@ public class CSVProcessor {
             e.printStackTrace();
         }
 
+        // Remove the line containing the target string
         boolean lineRemoved = false;
         for (int i = 0; i < lines.size(); i++) {
             if (lines.get(i).contains(target)) {
@@ -89,6 +98,7 @@ public class CSVProcessor {
             }
         }
 
+        // Move all the questions up under the removed line to fill the gap
         try {
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput("questions.csv", Context.MODE_PRIVATE));
             BufferedWriter bw = new BufferedWriter(outputStreamWriter);
@@ -107,24 +117,32 @@ public class CSVProcessor {
         }
     }
 
+
     /**
-     * Adds a new question to the CSV file.
+     * Adds a new question to a CSV file.
      *
      * @param question the question text
      * @param answer   the answer text
-     * @param setGroup the name of the question set
-     * @param context  the application context
+     * @param setGroup the group name the question belongs to
+     * @param context  the application context, used for accessing the file system
      */
     public static void addQuestion(String question, String answer, String setGroup, Context context) {
+        // Create a new line for the question, answer, and setGroup
         String newLine = question + "," + answer + "," + setGroup;
 
+        // Open the file in append mode and write the new line to the file
         try {
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput("questions.csv", Context.MODE_APPEND));
             BufferedWriter bw = new BufferedWriter(outputStreamWriter);
 
+            // Add a newline before writing the new question to avoid appending to the last line
             bw.newLine();
             bw.write(newLine);
+
+            // Log the addition of the new line
             Log.i("INFO", "Added LINE!");
+
+            // Close the BufferedWriter and OutputStreamWriter
             bw.close();
             outputStreamWriter.close();
         } catch (IOException e) {
@@ -132,18 +150,19 @@ public class CSVProcessor {
         }
     }
 
+
     /**
-     * Edits an existing question in the CSV file.
+     * Edits an existing question in a CSV file.
      *
-     * @param targetQuestion the text of the question to be replaced
+     * @param targetQuestion the original question text
      * @param newQuestion    the new question text
      * @param newAnswer      the new answer text
-     * @param setName        the name of the question set
-     * @param context        the application context
+     * @param setName        the group name the question belongs to
+     * @param context        the application context, used for accessing the file system
      */
     public static void editQuestion(String targetQuestion, String newQuestion, String newAnswer, String setName, Context context) {
+        // Read the contents of the file into a List of lines
         List<String> lines = new ArrayList<>();
-
         try {
             InputStream inputStream = context.openFileInput("questions.csv");
             BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
@@ -159,6 +178,7 @@ public class CSVProcessor {
             e.printStackTrace();
         }
 
+        // Replace the target question with the new question and answer
         boolean questionReplaced = false;
         for (int i = 0; i < lines.size(); i++) {
             String[] parts = lines.get(i).split(",");
@@ -169,6 +189,7 @@ public class CSVProcessor {
             }
         }
 
+        // If the question was replaced, write the modified contents back to the file
         if (questionReplaced) {
             try {
                 OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput("questions.csv", Context.MODE_PRIVATE));
@@ -188,5 +209,6 @@ public class CSVProcessor {
             }
         }
     }
+
 
 }
