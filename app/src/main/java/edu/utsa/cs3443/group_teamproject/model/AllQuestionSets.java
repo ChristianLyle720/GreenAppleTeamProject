@@ -38,9 +38,7 @@ public class AllQuestionSets {
         }
         return questions;
     }
-    public int changeQuestion(){
-        return 0;
-    }
+
     private void loadData(ArrayList<String[]> setData, ArrayList<String[]> questionData){
         QuestionSet newSet = null;
         for(int i = 0; i < setData.size(); i++){
